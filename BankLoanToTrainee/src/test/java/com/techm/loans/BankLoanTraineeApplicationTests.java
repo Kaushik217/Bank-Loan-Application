@@ -39,7 +39,7 @@ class BankLoanTraineeApplicationTests {
 	@Test
 	public void sanctionLoanLoanAlreadyTakenTest() {
 		try {
-			loanService.sanctionLoan(new Customer(2001, "Markel", 8765432112L, new Loan(1001, 1200000.0, 13.0, 15, "HomeLoan"),0));
+			loanService.sanctionLoan(new Customer(1, "Markel", 8765432112L, new Loan(1, 1200000.0, 13.0, 15, "HomeLoan"),0));
 		}
 		catch (Exception e) {
 			assert e.getMessage().contains(environment.getProperty("Service.LOAN_ALREADY_TAKEN"));
