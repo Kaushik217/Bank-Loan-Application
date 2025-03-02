@@ -55,6 +55,8 @@ public class LoanAPI {
 			return ResponseEntity.ok().body(loanService.getReportByLoanType(loanType));
 		}
 		catch(RuntimeException e) {
+			e.printStackTrace(); // Log the exception for debugging
+
 			//if an exception occurs throw the NOT_FOUND response status.
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 		}
